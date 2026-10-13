@@ -22,7 +22,7 @@ export const Route = createFileRoute("/chat")({
 });
 
 function Chat() {
-  const [active, setActive] = useState(groups[0]);
+  const [active, setActive] = useState(groups[0]!);
   const [msgs, setMsgs] = useState(initial);
   const [text, setText] = useState("");
 
