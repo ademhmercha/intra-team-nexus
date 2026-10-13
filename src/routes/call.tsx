@@ -7,8 +7,8 @@ import { users } from "@/lib/mock";
 type Mode = "audio" | "video" | "screen";
 
 export const Route = createFileRoute("/call")({
-  validateSearch: (s: Record<string, unknown>): { mode?: Mode } => ({
-    mode: ["audio", "video", "screen"].includes(s.mode as string) ? (s.mode as Mode) : undefined,
+  validateSearch: (s: Record<string, unknown>): { mode?: Mode | undefined } => ({
+    mode: ["audio", "video", "screen"].includes(s["mode"] as string) ? (s["mode"] as Mode) : undefined,
   }),
   head: () => ({
     meta: [
